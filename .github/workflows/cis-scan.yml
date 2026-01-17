@@ -1,0 +1,48 @@
+
+name: CIS Compliance Scan
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+jobs:
+  cis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests openpyxl
+
+      - name: Run CIS scan
+        env:
+          GITHUB_AUDIT_TOKEN: ${{ secrets.GITHUB_AUDIT_TOKEN }}
+          OKTA_TOKEN: ${{ secrets.OKTA_TOKEN }}
+          OKTA_ORG: ${{ secrets.OKTA_ORG }}
+        run: |
+          set -e
+          python scripts/run_scan.py
+
+      - name: List workspace (debug)
+        if: always()
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Tree:"
+          ls -la
+          echo "Reports directory:"
+          ls -la reports || echo "reports/ does not exist"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cis-reports
+          path: reports/**
+          if-no-files-found: warn
+          retention-days: 7

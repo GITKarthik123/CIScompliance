@@ -1,0 +1,612 @@
+[
+  {
+    "id": "1.1.1",
+    "title": "Ensure any changes to code are tracked in a version control platform",
+    "check": "any_changes_code_tracked_version"
+  },
+  {
+    "id": "1.1.2",
+    "title": "Ensure any change to code can be traced back to its associated task",
+    "check": "any_change_code_can_traced"
+  },
+  {
+    "id": "1.1.3",
+    "title": "Ensure any change to code receives approval of two strongly authenticated users",
+    "check": "any_change_code_receives_approval"
+  },
+  {
+    "id": "1.1.4",
+    "title": "Ensure previous approvals are dismissed when updates are introduced to a code change proposal",
+    "check": "previous_approvals_dismissed_when_updates"
+  },
+  {
+    "id": "1.1.5",
+    "title": "Ensure there are restrictions on who can dismiss code change reviews",
+    "check": "there_restrictions_who_can_dismiss"
+  },
+  {
+    "id": "1.1.6",
+    "title": "Ensure code owners are set for extra sensitive code or configuration",
+    "check": "code_owners_set_extra_sensitive"
+  },
+  {
+    "id": "1.1.7",
+    "title": "Ensure code owner's review is required when a change affects owned code",
+    "check": "code_owner_s_review_when"
+  },
+  {
+    "id": "1.1.8",
+    "title": "Ensure inactive branches are periodically reviewed and removed",
+    "check": "inactive_branches_periodically_reviewed_removed"
+  },
+  {
+    "id": "1.1.9",
+    "title": "Ensure all checks have passed before merging new code",
+    "check": "all_checks_have_passed_merging"
+  },
+  {
+    "id": "1.1.10",
+    "title": "Ensure open Git branches are up to date before they can be merged into code base",
+    "check": "open_git_branches_up_date"
+  },
+  {
+    "id": "1.1.11",
+    "title": "Ensure all open comments are resolved before allowing code change merging",
+    "check": "all_open_comments_resolved_allowing"
+  },
+  {
+    "id": "1.1.12",
+    "title": "Ensure verification of signed commits for new changes before merging",
+    "check": "verification_signed_commits_new_changes"
+  },
+  {
+    "id": "1.1.13",
+    "title": "Ensure linear history is required",
+    "check": "linear_history"
+  },
+  {
+    "id": "1.1.14",
+    "title": "Ensure branch protection rules are enforced for administrators",
+    "check": "branch_protection_rules_enforced_administrators"
+  },
+  {
+    "id": "1.1.15",
+    "title": "Ensure pushing or merging of new code is restricted to specific individuals or teams",
+    "check": "pushing_merging_new_code_restricted"
+  },
+  {
+    "id": "1.1.16",
+    "title": "Ensure force push code to branches is denied",
+    "check": "force_push_code_branches_denied"
+  },
+  {
+    "id": "1.1.17",
+    "title": "Ensure branch deletions are denied",
+    "check": "branch_deletions_denied"
+  },
+  {
+    "id": "1.1.18",
+    "title": "Ensure any merging of code is automatically scanned for risks",
+    "check": "any_merging_code_automatically_scanned"
+  },
+  {
+    "id": "1.1.19",
+    "title": "Ensure any changes to branch protection rules are audited",
+    "check": "any_changes_branch_protection_rules"
+  },
+  {
+    "id": "1.1.20",
+    "title": "Ensure branch protection is enforced on the default branch",
+    "check": "branch_protection"
+  },
+  {
+    "id": "1.2.1",
+    "title": "Ensure all public repositories contain a SECURITY.md file",
+    "check": "security_md"
+  },
+  {
+    "id": "1.2.2",
+    "title": "Ensure repository creation is limited to specific members",
+    "check": "repository_creation_limited_specific_members"
+  },
+  {
+    "id": "1.2.3",
+    "title": "Ensure repository deletion is limited to specific users",
+    "check": "repository_deletion_limited_specific_users"
+  },
+  {
+    "id": "1.2.4",
+    "title": "Ensure issue deletion is limited to specific users",
+    "check": "issue_deletion_limited_specific_users"
+  },
+  {
+    "id": "1.2.5",
+    "title": "Ensure all copies (forks) of code are tracked and accounted for",
+    "check": "all_copies_forks_code_tracked"
+  },
+  {
+    "id": "1.2.6",
+    "title": "Ensure all code projects are tracked for changes in visibility status",
+    "check": "all_code_projects_tracked_changes"
+  },
+  {
+    "id": "1.2.7",
+    "title": "Ensure inactive repositories are reviewed and archived periodically",
+    "check": "inactive_repositories_reviewed_archived_periodically"
+  },
+  {
+    "id": "1.3.1",
+    "title": "Ensure inactive users are reviewed and removed periodically",
+    "check": "inactive_users_reviewed_removed_periodically"
+  },
+  {
+    "id": "1.3.2",
+    "title": "Ensure team creation is limited to specific members",
+    "check": "team_creation_limited_specific_members"
+  },
+  {
+    "id": "1.3.3",
+    "title": "Ensure minimum number of administrators are set for the organization",
+    "check": "admin_count"
+  },
+  {
+    "id": "1.3.4",
+    "title": "Ensure Multi-Factor Authentication (MFA) is required for contributors of new code",
+    "check": "multi_factor_authentication_mfa_contributors"
+  },
+  {
+    "id": "1.3.5",
+    "title": "Ensure the organization is requiring members to use Multi-Factor Authentication (MFA)",
+    "check": "organization_requiring_members_use_multi"
+  },
+  {
+    "id": "1.3.6",
+    "title": "Ensure new members are required to be invited using company-approved email",
+    "check": "new_members_invited_company_approved"
+  },
+  {
+    "id": "1.3.7",
+    "title": "Ensure two administrators are set for each repository",
+    "check": "two_administrators_set_each_repository"
+  },
+  {
+    "id": "1.3.8",
+    "title": "Ensure strict base permissions are set for repositories",
+    "check": "strict_base_permissions_set_repositories"
+  },
+  {
+    "id": "1.3.9",
+    "title": "Ensure an organization’s identity is confirmed with a “Verified” badge",
+    "check": "organization_s_identity_confirmed_verified"
+  },
+  {
+    "id": "1.3.10",
+    "title": "Ensure Source Code Management (SCM) email notifications are restricted to verified domains",
+    "check": "source_code_management_scm_email"
+  },
+  {
+    "id": "1.3.11",
+    "title": "Ensure an organization provides SSH certificates",
+    "check": "organization_provides_ssh_certificates"
+  },
+  {
+    "id": "1.3.12",
+    "title": "Ensure Git access is limited based on IP addresses",
+    "check": "git_access_limited_based_ip"
+  },
+  {
+    "id": "1.3.13",
+    "title": "Ensure anomalous code behavior is tracked",
+    "check": "anomalous_code_behavior_tracked"
+  },
+  {
+    "id": "1.4.1",
+    "title": "Ensure administrator approval is required for every installed application",
+    "check": "app_approval"
+  },
+  {
+    "id": "1.4.2",
+    "title": "Ensure stale applications are reviewed and inactive ones are removed",
+    "check": "stale_applications_reviewed_inactive_ones"
+  },
+  {
+    "id": "1.4.3",
+    "title": "Ensure the access granted to each installed application is limited to the least privilege needed",
+    "check": "access_granted_each_installed_application"
+  },
+  {
+    "id": "1.4.4",
+    "title": "Ensure only secured webhooks are used",
+    "check": "only_secured_webhooks_used"
+  },
+  {
+    "id": "1.5.1",
+    "title": "Ensure scanners are in place to identify and prevent sensitive data in code",
+    "check": "scanners_place_identify_prevent_sensitive"
+  },
+  {
+    "id": "1.5.2",
+    "title": "Ensure scanners are in place to secure Continuous Integration (CI) pipeline instructions",
+    "check": "scanners_place_secure_continuous_integration"
+  },
+  {
+    "id": "1.5.3",
+    "title": "Ensure scanners are in place to secure Infrastructure as Code (IaC) instructions",
+    "check": "scanners_place_secure_infrastructure_as"
+  },
+  {
+    "id": "1.5.4",
+    "title": "Ensure scanners are in place for code vulnerabilities",
+    "check": "scanners_place_code_vulnerabilities"
+  },
+  {
+    "id": "1.5.5",
+    "title": "Ensure scanners are in place for open-source vulnerabilities in used packages",
+    "check": "scanners_place_open_source_vulnerabilities"
+  },
+  {
+    "id": "1.5.6",
+    "title": "Ensure scanners are in place for open-source license issues in used packages",
+    "check": "scanners_place_open_source_license"
+  },
+  {
+    "id": "2.1.1",
+    "title": "Ensure each pipeline has a single responsibility",
+    "check": "each_pipeline_has_single_responsibility"
+  },
+  {
+    "id": "2.1.2",
+    "title": "Ensure all aspects of the pipeline infrastructure and configuration are immutable",
+    "check": "all_aspects_pipeline_infrastructure_configuration"
+  },
+  {
+    "id": "2.1.3",
+    "title": "Ensure the build environment is logged",
+    "check": "build_environment_logged"
+  },
+  {
+    "id": "2.1.4",
+    "title": "Ensure the creation of the build environment is automated",
+    "check": "creation_build_environment_automated"
+  },
+  {
+    "id": "2.1.5",
+    "title": "Ensure access to build environments is limited",
+    "check": "access_build_environments_limited"
+  },
+  {
+    "id": "2.1.6",
+    "title": "Ensure users must authenticate to access the build environment",
+    "check": "users_must_authenticate_access_build"
+  },
+  {
+    "id": "2.1.7",
+    "title": "Ensure build secrets are limited to the minimal necessary scope",
+    "check": "build_secrets_limited_minimal_necessary"
+  },
+  {
+    "id": "2.1.8",
+    "title": "Ensure the build infrastructure is automatically scanned for vulnerabilities",
+    "check": "build_infrastructure_automatically_scanned_vulnerabilities"
+  },
+  {
+    "id": "2.1.9",
+    "title": "Ensure default passwords are not used",
+    "check": "default_passwords_not_used"
+  },
+  {
+    "id": "2.1.10",
+    "title": "Ensure webhooks of the build environment are secured",
+    "check": "webhooks_build_environment_secured"
+  },
+  {
+    "id": "2.1.11",
+    "title": "Ensure minimum number of administrators are set for the build environment",
+    "check": "minimum_number_administrators_set_build"
+  },
+  {
+    "id": "2.2.1",
+    "title": "Ensure build workers are single-used",
+    "check": "build_workers_single_used"
+  },
+  {
+    "id": "2.2.2",
+    "title": "Ensure build worker environments and commands are passed and not pulled",
+    "check": "build_worker_environments_commands_passed"
+  },
+  {
+    "id": "2.2.3",
+    "title": "Ensure the duties of each build worker are segregated",
+    "check": "duties_each_build_worker_segregated"
+  },
+  {
+    "id": "2.2.4",
+    "title": "Ensure build workers have minimal network connectivity",
+    "check": "build_workers_have_minimal_network"
+  },
+  {
+    "id": "2.2.5",
+    "title": "Ensure run-time security is enforced for build workers",
+    "check": "run_time_security_enforced_build"
+  },
+  {
+    "id": "2.2.6",
+    "title": "Ensure build workers are automatically scanned for vulnerabilities",
+    "check": "build_workers_automatically_scanned_vulnerabilities"
+  },
+  {
+    "id": "2.2.7",
+    "title": "Ensure build workers' deployment configuration is stored in a version control platform",
+    "check": "build_workers_deployment_configuration_stored"
+  },
+  {
+    "id": "2.2.8",
+    "title": "Ensure resource consumption of build workers is monitored",
+    "check": "resource_consumption_build_workers_monitored"
+  },
+  {
+    "id": "2.3.1",
+    "title": "Ensure all build steps are defined as code",
+    "check": "all_build_steps_defined_as"
+  },
+  {
+    "id": "2.3.2",
+    "title": "Ensure steps have clearly defined build stage input and output",
+    "check": "steps_have_clearly_defined_build"
+  },
+  {
+    "id": "2.3.3",
+    "title": "Ensure output is written to a separate, secured storage repository",
+    "check": "output_written_separate_secured_storage"
+  },
+  {
+    "id": "2.3.4",
+    "title": "Ensure changes to pipeline files are tracked and reviewed",
+    "check": "changes_pipeline_files_tracked_reviewed"
+  },
+  {
+    "id": "2.3.5",
+    "title": "Ensure access to build process triggering is minimized",
+    "check": "access_build_process_triggering_minimized"
+  },
+  {
+    "id": "2.3.6",
+    "title": "Ensure pipelines are automatically scanned for misconfigurations",
+    "check": "pipelines_automatically_scanned_misconfigurations"
+  },
+  {
+    "id": "2.3.7",
+    "title": "Ensure pipelines are automatically scanned for vulnerabilities",
+    "check": "pipelines_automatically_scanned_vulnerabilities"
+  },
+  {
+    "id": "2.3.8",
+    "title": "Ensure scanners are in place to identify and prevent sensitive data in pipeline files",
+    "check": "scanners_place_identify_prevent_sensitive"
+  },
+  {
+    "id": "2.4.1",
+    "title": "Ensure all artifacts on all releases are signed",
+    "check": "all_artifacts_all_releases_signed"
+  },
+  {
+    "id": "2.4.1",
+    "title": "Ensure all artifacts on all releases are signed",
+    "check": "all_artifacts_all_releases_signed"
+  },
+  {
+    "id": "2.4.2",
+    "title": "Ensure all external dependencies used in the build process are locked",
+    "check": "all_external_dependencies_used_build"
+  },
+  {
+    "id": "2.4.3",
+    "title": "Ensure dependencies are validated before being used",
+    "check": "dependencies_validated_being_used"
+  },
+  {
+    "id": "2.4.4",
+    "title": "Ensure the build pipeline creates reproducible artifacts",
+    "check": "build_pipeline_creates_reproducible_artifacts"
+  },
+  {
+    "id": "2.4.5",
+    "title": "Ensure pipeline steps produce a Software Bill of Materials (SBOM)",
+    "check": "pipeline_steps_produce_software_bill"
+  },
+  {
+    "id": "2.4.6",
+    "title": "Ensure pipeline steps sign the Software Bill of Materials (SBOM) produced",
+    "check": "pipeline_steps_sign_software_bill"
+  },
+  {
+    "id": "3.1.1",
+    "title": "Ensure third-party artifacts and open-source libraries are verified",
+    "check": "third_party_artifacts_open_source"
+  },
+  {
+    "id": "3.1.2",
+    "title": "Ensure Software Bill of Materials (SBOM) is required from all third-party suppliers",
+    "check": "software_bill_materials_sbom_all"
+  },
+  {
+    "id": "3.1.3",
+    "title": "Ensure signed metadata of the build process is required and verified",
+    "check": "signed_metadata_build_process_verified"
+  },
+  {
+    "id": "3.1.4",
+    "title": "Ensure dependencies are monitored between open-source components",
+    "check": "dependencies_monitored_between_open_source"
+  },
+  {
+    "id": "3.1.5",
+    "title": "Ensure trusted package managers and repositories are defined and prioritized",
+    "check": "trusted_package_managers_repositories_defined"
+  },
+  {
+    "id": "3.1.6",
+    "title": "Ensure a signed Software Bill of Materials (SBOM) of the code is supplied",
+    "check": "signed_software_bill_materials_sbom"
+  },
+  {
+    "id": "3.1.7",
+    "title": "Ensure dependencies are pinned to a specific, verified version",
+    "check": "dependencies_pinned_specific_verified_version"
+  },
+  {
+    "id": "3.1.8",
+    "title": "Ensure all packages used are more than 60 days old",
+    "check": "all_packages_used_more_than"
+  },
+  {
+    "id": "3.2.1",
+    "title": "Ensure an organization-wide dependency usage policy is enforced",
+    "check": "organization_wide_dependency_usage_policy"
+  },
+  {
+    "id": "3.2.2",
+    "title": "Ensure packages are automatically scanned for known vulnerabilities",
+    "check": "packages_automatically_scanned_known_vulnerabilities"
+  },
+  {
+    "id": "3.2.3",
+    "title": "Ensure packages are automatically scanned for license implications",
+    "check": "packages_automatically_scanned_license_implications"
+  },
+  {
+    "id": "3.2.4",
+    "title": "Ensure packages are automatically scanned for ownership change",
+    "check": "packages_automatically_scanned_ownership_change"
+  },
+  {
+    "id": "4.1.1",
+    "title": "Ensure all artifacts are signed by the build pipeline itself",
+    "check": "all_artifacts_signed_build_pipeline"
+  },
+  {
+    "id": "4.1.2",
+    "title": "Ensure artifacts are encrypted before distribution",
+    "check": "artifacts_encrypted_distribution"
+  },
+  {
+    "id": "4.1.3",
+    "title": "Ensure only authorized platforms have decryption capabilities of artifacts",
+    "check": "only_authorized_platforms_have_decryption"
+  },
+  {
+    "id": "4.2.1",
+    "title": "Ensure the authority to certify artifacts is limited",
+    "check": "authority_certify_artifacts_limited"
+  },
+  {
+    "id": "4.2.2",
+    "title": "Ensure number of permitted users who may upload new artifacts is minimized",
+    "check": "number_permitted_users_who_may"
+  },
+  {
+    "id": "4.2.3",
+    "title": "Ensure user access to the package registry utilizes Multi-Factor Authentication (MFA)",
+    "check": "user_access_package_registry_utilizes"
+  },
+  {
+    "id": "4.2.4",
+    "title": "Ensure user management of the package registry is not local",
+    "check": "user_management_package_registry_not"
+  },
+  {
+    "id": "4.2.5",
+    "title": "Ensure anonymous access to artifacts is revoked",
+    "check": "anonymous_access_artifacts_revoked"
+  },
+  {
+    "id": "4.2.6",
+    "title": "Ensure minimum number of administrators are set for the package registry",
+    "check": "minimum_number_administrators_set_package"
+  },
+  {
+    "id": "4.3.1",
+    "title": "Ensure all signed artifacts are validated upon uploading the package registry",
+    "check": "all_signed_artifacts_validated_upon"
+  },
+  {
+    "id": "4.3.2",
+    "title": "Ensure all versions of an existing artifact have their signatures validated",
+    "check": "all_versions_existing_artifact_have"
+  },
+  {
+    "id": "4.3.3",
+    "title": "Ensure changes in package registry configuration are audited",
+    "check": "changes_package_registry_configuration_audited"
+  },
+  {
+    "id": "4.3.4",
+    "title": "Ensure webhooks of the repository are secured",
+    "check": "webhooks_repository_secured"
+  },
+  {
+    "id": "4.4.1",
+    "title": "Ensure artifacts contain information about their origin",
+    "check": "artifacts_contain_information_about_their"
+  },
+  {
+    "id": "5.1.1",
+    "title": "Ensure deployment configuration files are separated from source code",
+    "check": "deployment_configuration_files_separated_source"
+  },
+  {
+    "id": "5.1.2",
+    "title": "Ensure changes in deployment configuration are audited",
+    "check": "changes_deployment_configuration_audited"
+  },
+  {
+    "id": "5.1.3",
+    "title": "Ensure scanners are in place to identify and prevent sensitive data in deployment configuration",
+    "check": "scanners_place_identify_prevent_sensitive"
+  },
+  {
+    "id": "5.1.4",
+    "title": "Limit access to deployment configurations",
+    "check": "limit_access_deployment_configurations"
+  },
+  {
+    "id": "5.1.5",
+    "title": "Scan Infrastructure as Code (IaC)",
+    "check": "scan_infrastructure_as_code_iac"
+  },
+  {
+    "id": "5.1.6",
+    "title": "Ensure deployment configuration manifests are verified",
+    "check": "deployment_configuration_manifests_verified"
+  },
+  {
+    "id": "5.1.7",
+    "title": "Ensure deployment configuration manifests are pinned to a specific, verified version",
+    "check": "deployment_configuration_manifests_pinned_specific"
+  },
+  {
+    "id": "5.2.1",
+    "title": "Ensure deployments are automated",
+    "check": "deployments_automated"
+  },
+  {
+    "id": "5.2.2",
+    "title": "Ensure the deployment environment is reproducible",
+    "check": "deployment_environment_reproducible"
+  },
+  {
+    "id": "5.2.3",
+    "title": "Ensure access to production environment is limited",
+    "check": "access_production_environment_limited"
+  },
+  {
+    "id": "5.2.4",
+    "title": "Ensure default passwords are not used",
+    "check": "default_passwords_not_used"
+  },
+  {
+    "id": "IAM-OKTA-1",
+    "title": "Ensure MFA is enforced via Okta",
+    "check": "okta_mfa"
+  }
+]
