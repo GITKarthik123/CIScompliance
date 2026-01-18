@@ -12,12 +12,21 @@ def list_repos():
 def inactive_repositories(days=180):
     cutoff = datetime.datetime.utcnow() - datetime.timedelta(days=days)
     stale = []
+
     for r in list_repos():
         pushed = r.get("pushed_at")
+
         if not pushed:
             stale.append(r["name"])
             continue
-        dt = datetime.datetime.fromisoformat(pushed.replace("Z","+00:00"))
+
+        dt = datetime.datetime.fromisoformat(pushed.replace("Z", "+00:00"))
         if dt < cutoff:
             stale.append(r["name"])
-    return {"status": "FAIL" if stale else "PASS", "non_compliant": stale}
+
+    return {
+        "control_id": "RM-1.2",
+        "status": "FAIL" if stale else "PASS",
+        "non_compliant": stale,
+        "evidence": f"Repositories inactive for more than {days} days"
+    }
