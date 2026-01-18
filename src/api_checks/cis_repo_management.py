@@ -28,5 +28,6 @@ def inactive_repositories(days=180):
         "control_id": "RM-1.2",
         "status": "FAIL" if stale else "PASS",
         "non_compliant": stale,
-        "evidence": f"Repositories inactive for more than {days} days"
+        "evidence": "Checked via GitHub REST API (repos.pushed_at)",
+        "validation_type": "AUTOMATED"
     }

@@ -5,30 +5,42 @@ def write_csv_report(controls, results, out_path="reports/cis_compliance_report.
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     with open(out_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-
-        writer.writerow([
-            "Section",
-            "Control ID",
-            "Control Name",
-            "Category",
-            "Validation Type",
-            "Status",
-            "Non-Compliant Items",
-            "Evidence"
-        ])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "Section",
+                "Control ID",
+                "Control Name",
+                "Category",
+                "Validation Type",
+                "Status",
+                "Non-Compliant Items",
+                "Evidence",
+            ],
+        )
+        writer.writeheader()
 
         for c in controls:
-            cid = c.get("Control ID") or c.get("ID")
-            res = results.get(cid, {})
+            cid = c["Control ID"]
 
-            writer.writerow([
-                c.get("Section"),
-                cid,
-                c.get("Control Name"),
-                c.get("Category"),
-                c.get("Validation Type"),
-                res.get("status", "MANUAL"),
-                ", ".join(res.get("non_compliant", [])),
-                res.get("evidence", "Not validated by automation")
-            ])
+            r = results.get(cid)
+
+            if r:
+                status = r["status"]
+                non_compliant = ", ".join(r.get("non_compliant", []))
+                evidence = r.get("evidence", "")
+            else:
+                status = "MANUAL"
+                non_compliant = ""
+                evidence = "Not validated by automation"
+
+            writer.writerow({
+                "Section": c["Section"],
+                "Control ID": cid,
+                "Control Name": c["Control Name"],
+                "Category": c["Category"],
+                "Validation Type": c["Validation Type"],
+                "Status": status,
+                "Non-Compliant Items": non_compliant,
+                "Evidence": evidence,
+            })
