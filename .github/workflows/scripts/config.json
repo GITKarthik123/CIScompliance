@@ -1,0 +1,7 @@
+{
+  "trusted_users": [
+    "alice",
+    "bob",
+    "carol"
+  ]
+}

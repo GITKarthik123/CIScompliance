@@ -1,0 +1,27 @@
+name: CIS Compliance Validation
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"   # Run weekly
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  compliance-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests PyGithub
+
+      - name: Run compliance checks
+        run: python scripts/compliance.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_NAME: DevOps-Common
