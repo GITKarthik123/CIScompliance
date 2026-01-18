@@ -25,14 +25,17 @@ def write_csv_report(controls, results, out_path="reports/cis_compliance_report.
 
             r = results.get(cid)
 
+
             if r:
                 status = r["status"]
                 non_compliant = ", ".join(r.get("non_compliant", []))
                 evidence = r.get("evidence", "")
+                validation_type = "AUTOMATED"
             else:
                 status = "MANUAL"
                 non_compliant = ""
                 evidence = "Not validated by automation"
+                validation_type = c["Validation Type"]
 
             writer.writerow({
                 "Section": c["Section"],
