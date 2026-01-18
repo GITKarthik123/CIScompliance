@@ -1,6 +1,7 @@
 
 import re
-from github_client import get as gh_get
+#from github_client import get as gh_get
+from src.github_client import get as gh_get
 
 ORG = "DevOps-Common"
 REPO = "sample-repo"

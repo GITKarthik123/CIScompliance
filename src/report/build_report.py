@@ -1,4 +1,4 @@
-
+import os
 from datetime import date
 
 def build_report(results: dict, output="reports/cis_report.md"):

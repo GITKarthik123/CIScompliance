@@ -1,22 +1,14 @@
-# src/github_client.py
-import os
-import requests
+import os, requests
 
-GITHUB_API = "https://api.github.com"
+TOKEN = os.getenv("GH_AUDIT_TOKEN")
+HEADERS = {
+  "Authorization": f"Bearer {TOKEN}",
+  "Accept": "application/vnd.github+json"
+}
+BASE = "https://api.github.com"
 
-def get(path: str):
-    token = os.getenv("GITHUB_TOKEN")
-    if not token:
-        raise RuntimeError("GITHUB_TOKEN not set")
-
-    url = f"{GITHUB_API}{path}"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-    }
-
-    r = requests.get(url, headers=headers, timeout=30)
-    if r.status_code == 404:
-        return {}
-    r.raise_for_status()
+def get(url):
+    r = requests.get(BASE + url, headers=HEADERS)
+    if r.status_code not in (200,201):
+        return None
     return r.json()

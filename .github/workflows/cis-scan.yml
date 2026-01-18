@@ -1,53 +1,106 @@
 name: CIS Compliance Scan
 
+ 
+
 on:
+
   schedule:
+
     - cron: "0 2 1 * *"     # Run monthly on the 1st at 02:00
+
   workflow_dispatch:      # Enable manual trigger
 
+ 
+
 jobs:
+
   cis:
+
     runs-on: ubuntu-latest
 
+ 
+
     steps:
+
       # 1. Checkout repo
+
       - uses: actions/checkout@v4
 
+ 
+
       # 2. Setup Python
+
       - name: Setup Python
+
         uses: actions/setup-python@v5
+
         with:
+
           python-version: "3.11"
 
+ 
+
       # 3. Install dependencies
+
       - name: Install dependencies
+
         run: |
+
           python -m pip install --upgrade pip
+
           pip install -r requirements.txt
 
+ 
+
       # 4. Run CIS compliance engine
+
       - name: Run CIS compliance scan
+
         env:
+
           GITHUB_TOKEN: ${{ secrets.GITHUB_AUDIT_TOKEN }}
+          PYTHONPATH: ${{ github.workspace }}/src
+
         run: |
+
           set -e
-          python src/main.py
+
+          #python src/main.py
+          python -m src.main
+ 
 
       # 5. Debug – list workspace
+
       - name: List workspace (debug)
+
         if: always()
+
         run: |
+
           echo "PWD: $(pwd)"
+
           echo "Tree:"
+
           ls -la
+
           echo "Reports directory:"
+
           ls -la reports || echo "reports/ does not exist"
 
+ 
+
       # 6. Upload report artifacts
+
       - name: Upload CIS reports
+
         if: always()
+
         uses: actions/upload-artifact@v4
+
         with:
+
           name: cis-compliance-report
+
           path: reports/**
+
           if-no-files-found: warn
